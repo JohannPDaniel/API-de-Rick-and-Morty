@@ -1,0 +1,1 @@
+https://rickandmortyapi.com/documentation/?authuser=0#rest
