@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,14 +14,15 @@
     <link rel="shortcut icon" href="../images/rickMorty.ico" type="image/x-icon">
     <title>API de Rick and Morty</title>
 </head>
+
 <body>
-    <header class="container-fluid bg-black d-flex flex-column align-items-center justify-content-center">
+    <header class="container-fluid bg-white d-flex flex-column align-items-center justify-content-center">
         <section class="row d-flex flex-column align-self-start">
             <section class="col-12">
                 <img src="../images/RICK_MORTY_ICON.png" alt="rickMorty" class="rickmorty mt-3">
             </section>
         </section>
-        <section class="row w-100 d-flex mt-5 justify-content-center">
+        <section class="row w-100 d-flex mt-1 justify-content-center">
             <section class="col-12 col-sm-9 col-md-7 col-lg-5 col-xxl-6 text-center">
                 <h1 class="title mt-2">API de Rick and Morty</h1>
             </section>
@@ -28,113 +30,148 @@
         <section class="row w-100 d-flex flex-column align-items-center justify-content-center">
             <section class="col-12 col-sm-9 col-md-7 col-lg-5 col-xxl-5">
                 <form action="#" class="form-inline position-relative mt-2 mb-4 w-100">
-                    <input type="text" name="form" id="form" class="form-control rounded-3 bg-black w-100" placeholder="Pesquise">
+                    <input type="text" name="form" id="form" class="form-control rounded-3 w-100"
+                        placeholder="Pesquise">
                     <i class="bi bi-search search"></i>
                 </form>
             </section>
         </section>
     </header>
-    <main id="page-rickMorty" class="d-flex flex-column align-items-start">
-        <section class="container-fluid d-flex flex-column image-rickmorty">
-            <section class="row w-100 mb-lg-5 ">
-                <section class="col-12 col-sm-6 d-flex flex-column align-items-end justify-content-center mb-3">
-                    <div class="card" id="list">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
+
+    <main class="full-width pt-4">
+        <div class="container image-rickmorty">
+            <div class="row gx-0 gy-3">
+                <div class="col-12 col-sm-4">
+                    <div class="image-container">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titulo do Card</h5>
+                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                <p class="location-title seen-title">Última localização conhecida</p>
+                                <p class="card-text">Planeta XPTO</p>
+                                <p class="location seen">Nome do capítulo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                    <div class="image-container">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titulo do Card</h5>
+                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                <p class="location-title seen-title">Última localização conhecida</p>
+                                <p class="card-text">Planeta XPTO</p>
+                                <p class="location seen">Nome do capítulo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-4">
+                    <div class="image-container">
+                        <div class="card">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Titulo do Card</h5>
+                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                <p class="location-title seen-title">Última localização conhecida</p>
+                                <p class="card-text">Planeta XPTO</p>
+                                <p class="location seen">Nome do capítulo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gx-0 gy-3">
+                <div class="row gx-0 gy-3">
+                    <div class="col-12 col-sm-4">
+                        <div class="image-container">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo do Card</h5>
+                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                    <p class="location-title seen-title">Última localização conhecida</p>
+                                    <p class="card-text">Planeta XPTO</p>
+                                    <p class="location seen">Nome do capítulo</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
+                    <div class="col-12 col-sm-4">
+                        <div class="image-container">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo do Card</h5>
+                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                    <p class="location-title seen-title">Última localização conhecida</p>
+                                    <p class="card-text">Planeta XPTO</p>
+                                    <p class="location seen">Nome do capítulo</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="card">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
+                    <div class="col-12 col-sm-4">
+                        <div class="image-container">
+                            <div class="card">
+                                <img src="..." class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo do Card</h5>
+                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
+                                    <p class="location-title seen-title">Última localização conhecida</p>
+                                    <p class="card-text">Planeta XPTO</p>
+                                    <p class="location seen">Nome do capítulo</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="card">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3 gap-3">
-                    <div class="card">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-img"></div>
-                        <div class="card-content">
-                            <h3>Título do card</h3>
-                            <p class="status"><span class="status-dot"></span> Vivo - Humano</p>
-                            <p class="location-title">Última localização conhecida</p>
-                            <p class="location">Planeta XPTO</p>
-                            <p class="seen-title">Visto a última vez em:</p>
-                            <p class="seen">Nome do capítulo</p>
-                        </div>
-                    </div>
-                </section>
-            </section>
-        </section>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item"><a class="page-link" href="#">Voltar</a></li>
+                          <li class="page-item"><a class="page-link" href="#">1</a></li>
+                          <li class="page-item"><a class="page-link" href="#">2</a></li>
+                          <li class="page-item"><a class="page-link" href="#">3</a></li>
+                          <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                        </ul>
+                      </nav>
+                </div>
+            </div>
     </main>
-    <footer class="container-fluid d-flex flex-column">
-        <section class="row w-100 d-flex justify-content-center text-center footer-first">
-            <section class="col-12 d-flex justify-content-center gap-2 p-3 gap-sm-5">
-                <p style="color: rgb(55, 229, 55);">PERSONAGENS: <span class="text-light">XX</span></p>
-                <p style="color: rgb(55, 229, 55);">LOCALIZAÇÕES: <span class="text-light">XX</span></p>
-                <p style="color: rgb(55, 229, 55);">EPISÓDIOS: <span class="text-light">XX</span></p>
-            </section>
-        </section>
-        <section class="row footer-second text-center">
-            <section class="col">
-                <p style="color: rgb(55, 229, 55);">Desenvolvido por: <span class="text-light">Johann Patricio Daniel</span> em 2024</p>
-            </section>
-        </section>
+
+
+    <footer class="container-fluid d-flex flex-column footer-first">
+        <div class="row d-flex justify-content-center text-center">
+            <div class="col-12 d-sm-flex justify-content-center">
+                <p class="footer-p">PERSONAGENS: <span class="footer-x text-light">XX</span></p>
+                <p class="footer-p">LOCALIZAÇÕES: <span class="footer-x text-light">XX</span></p>
+                <p class="footer-p">EPISÓDIOS: <span class="footer-x text-light">XX</span></p>
+            </div>
+        </div>
+        <div class="row text-center footer-second">
+            <div class="col">
+                <p class="footer-p">Desenvolvido por: <span class="text-light">Johann Patricio Daniel</span> em 2024
+                </p>
+            </div>
+        </div>
     </footer>
-    <!-- JS Axios -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Meu script -->
     <script src="../js/api.js"></script>
     <script src="../js/script.js"></script>
 </body>
+
 </html>
