@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <header class="container-fluid bg-white d-flex flex-column align-items-center justify-content-center">
+    <header class="container-fluid bg-white d-flex flex-column align-items-center justify-content-center pb-4">
         <section class="row d-flex flex-column align-self-start">
             <section class="col-12">
                 <img src="../images/RICK_MORTY_ICON.png" alt="rickMorty" class="rickmorty mt-3">
@@ -29,10 +29,11 @@
         </section>
         <section class="row w-100 d-flex flex-column align-items-center justify-content-center">
             <section class="col-12 col-sm-9 col-md-7 col-lg-5 col-xxl-5">
-                <form action="#" class="form-inline position-relative mt-2 mb-4 w-100">
-                    <input type="text" name="form" id="form" class="form-control rounded-3 w-100"
-                        placeholder="Pesquise">
-                    <i class="bi bi-search search"></i>
+                <form id="search-form" class="form-inline position-relative mt-2 mb-4 w-100">
+                    <input type="text" name="query" id="query" class="form-control rounded-3 w-100" placeholder="Pesquise">
+                    <button type="submit" class="btn  position-absolute end-0">
+                        <i class="bi bi-search" style="color: green;"></i>
+                    </button>
                 </form>
             </section>
         </section>
@@ -54,7 +55,6 @@
         </div>
     </main>
 
-
     <footer class="container-fluid d-flex flex-column footer-first">
         <div class="row d-flex justify-content-center text-center">
             <div class="col-12 d-sm-flex justify-content-center">
@@ -69,6 +69,17 @@
             </div>
         </div>
     </footer>
+
+    <button id="topBtn" onclick="topFunction()">&#8679; Topo</button>
+
+    <div id="audio-controls">
+        <button id="playBtn" class="btn btn-success">Play</button>
+        <button id="pauseBtn" class="btn btn-danger">Pause</button>
+    </div>
+
+    <audio id="background-audio" src="../audio/Rick and Morty Theme Song [HD].mp3" loop></audio>
+
+
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JS Axios -->
