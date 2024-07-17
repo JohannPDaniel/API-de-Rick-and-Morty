@@ -38,130 +38,34 @@
         </section>
     </header>
 
-    <main class="full-width pt-4">
-        <div class="container image-rickmorty">
-            <div class="row gx-0 gy-3">
-                <div class="col-12 col-sm-4">
-                    <div class="image-container">
-                        <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Titulo do Card</h5>
-                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                <p class="location-title seen-title">Última localização conhecida</p>
-                                <p class="card-text">Planeta XPTO</p>
-                                <p class="location seen">Nome do capítulo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-4">
-                    <div class="image-container">
-                        <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Titulo do Card</h5>
-                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                <p class="location-title seen-title">Última localização conhecida</p>
-                                <p class="card-text">Planeta XPTO</p>
-                                <p class="location seen">Nome do capítulo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-12 col-sm-4">
-                    <div class="image-container">
-                        <div class="card">
-                            <img src="..." class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Titulo do Card</h5>
-                                <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                <p class="location-title seen-title">Última localização conhecida</p>
-                                <p class="card-text">Planeta XPTO</p>
-                                <p class="location seen">Nome do capítulo</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row gx-0 gy-3">
-                <div class="row gx-0 gy-3">
-                    <div class="col-12 col-sm-4">
-                        <div class="image-container">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Titulo do Card</h5>
-                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                    <p class="location-title seen-title">Última localização conhecida</p>
-                                    <p class="card-text">Planeta XPTO</p>
-                                    <p class="location seen">Nome do capítulo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-4">
-                        <div class="image-container">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Titulo do Card</h5>
-                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                    <p class="location-title seen-title">Última localização conhecida</p>
-                                    <p class="card-text">Planeta XPTO</p>
-                                    <p class="location seen">Nome do capítulo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-12 col-sm-4">
-                        <div class="image-container">
-                            <div class="card">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Titulo do Card</h5>
-                                    <p class="card-text"><span class="status-vivo"></span>Vivo - Humano</p>
-                                    <p class="location-title seen-title">Última localização conhecida</p>
-                                    <p class="card-text">Planeta XPTO</p>
-                                    <p class="location seen">Nome do capítulo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <main>
+        <div class="container-fluid image-rickmorty">
+            <div class="row gx-0 gy-3" id="character-cards"></div>
             <div class="row mt-5">
                 <div class="col">
                     <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item"><a class="page-link" href="#">Voltar</a></li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item"><a class="page-link" href="#">Próximo</a></li>
+                        <ul class="pagination" id="pagination-controls">
+                            <li class="page-item"><a class="page-link" href="#" id="prev-page">Voltar</a></li>
+                            <li class="page-item"><a class="page-link" href="#" id="next-page">Próximo</a></li>
                         </ul>
-                      </nav>
+                    </nav>
                 </div>
             </div>
+        </div>
     </main>
 
 
     <footer class="container-fluid d-flex flex-column footer-first">
         <div class="row d-flex justify-content-center text-center">
             <div class="col-12 d-sm-flex justify-content-center">
-                <p class="footer-p">PERSONAGENS: <span class="footer-x text-light">XX</span></p>
-                <p class="footer-p">LOCALIZAÇÕES: <span class="footer-x text-light">XX</span></p>
-                <p class="footer-p">EPISÓDIOS: <span class="footer-x text-light">XX</span></p>
+                <p class="footer-p">PERSONAGENS: <span class="footer-x text-light" id="character-count">XX</span></p>
+                <p class="footer-p">LOCALIZAÇÕES: <span class="footer-x text-light" id="location-count">XX</span></p>
+                <p class="footer-p">EPISÓDIOS: <span class="footer-x text-light" id="episode-count">XX</span></p>
             </div>
         </div>
         <div class="row text-center footer-second">
             <div class="col">
-                <p class="footer-p">Desenvolvido por: <span class="text-light">Johann Patricio Daniel</span> em 2024
-                </p>
+                <p class="footer-p">Desenvolvido por: <span class="text-light">Johann Patricio Daniel</span> em 2024</p>
             </div>
         </div>
     </footer>
