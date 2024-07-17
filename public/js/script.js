@@ -2,19 +2,41 @@ document.addEventListener('DOMContentLoaded', async function() {
     let currentPage = 1;
     const charactersPerPage = 6;
     let totalPages = 0;
+    let currentQuery = '';
 
-    async function loadCharacters(page) {
-        const data = await callCards(page);
+    const audio = document.getElementById('background-audio');
+    const playBtn = document.getElementById('playBtn');
+    const pauseBtn = document.getElementById('pauseBtn');
+
+    playBtn.addEventListener('click', function() {
+        audio.play();
+    });
+
+    pauseBtn.addEventListener('click', function() {
+        audio.pause();
+    });
+
+    audio.play();
+
+    document.getElementById('search-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        currentQuery = document.getElementById('query').value;
+        currentPage = 1;
+        loadCharacters(currentPage, currentQuery);
+    });
+
+    async function loadCharacters(page, query = '') {
+        const data = await callCards(page, query);
         totalPages = Math.ceil(data.info.count / charactersPerPage);
         const characters = data.results;
-        
-        const container = document.getElementById('character-cards');
-        container.innerHTML = ''; 
 
-        for (let i = 0; i < Math.max(charactersPerPage, characters.length); i++) {
+        const container = document.getElementById('character-cards');
+        container.innerHTML = '';
+
+        for (let i = 0; i < characters.length; i++) {
             const character = characters[i];
             let statusClass = '';
-            switch(character.status.toLowerCase()) {
+            switch (character.status.toLowerCase()) {
                 case 'alive':
                     statusClass = 'status-alive';
                     break;
@@ -51,10 +73,10 @@ document.addEventListener('DOMContentLoaded', async function() {
             `;
             container.insertAdjacentHTML('beforeend', card);
         }
-        updatePaginationControls();
+        updatePaginationControls(query);
     }
 
-    function updatePaginationControls() {
+    function updatePaginationControls(query = '') {
         const prevPageButton = document.getElementById('prev-page');
         const nextPageButton = document.getElementById('next-page');
 
@@ -64,14 +86,16 @@ document.addEventListener('DOMContentLoaded', async function() {
         prevPageButton.onclick = () => {
             if (currentPage > 1) {
                 currentPage--;
-                loadCharacters(currentPage);
+                loadCharacters(currentPage, query);
+                topFunction();
             }
         };
 
         nextPageButton.onclick = () => {
             if (currentPage < totalPages) {
                 currentPage++;
-                loadCharacters(currentPage);
+                loadCharacters(currentPage, query);
+                topFunction();
             }
         };
     }
@@ -89,3 +113,20 @@ document.addEventListener('DOMContentLoaded', async function() {
     loadCharacters(currentPage);
     updateFooter();
 });
+
+window.onscroll = function() { scrollFunction(); };
+
+function scrollFunction() {
+    const topBtn = document.getElementById("topBtn");
+    if (document.body.scrollTop > 40 || document.documentElement.scrollTop > 40) {
+        topBtn.classList.add("show");
+    } else {
+        topBtn.classList.remove("show");
+    }
+}
+
+// Função para rolar para o topo da página
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
