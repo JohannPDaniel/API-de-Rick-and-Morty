@@ -23,10 +23,10 @@ html {
 
 @keyframes infiniteRotate {
   from {
-      transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   to {
-      transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 
@@ -36,18 +36,17 @@ html {
   font-weight: 800;
   font-size: 1.7rem;
   animation: blinkColor 1s ease-in-out 0s infinite alternate forwards running;
-
 }
 
 @keyframes blinkColor {
   0% {
-      color: green;
+    color: green;
   }
   50% {
-      color: yellow;
+    color: yellow;
   }
   100% {
-      color: green;
+    color: green;
   }
 }
 
@@ -101,51 +100,36 @@ html {
   max-width: 350px;
   max-height: 160px;
   margin: 0 auto;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: scale(1.5);
-  animation: hoverEffect 0.5s forwards;
-  box-shadow: 0 4px 8px rgba(48, 188, 48, 23);
+  transition: box-shadow 0.3s ease;
 }
 
 .card:hover {
   animation: wobble 0.5s forwards;
+  box-shadow: 0 4px 8px rgba(48, 188, 48, 23);
 }
 
 @keyframes wobble {
-  0%, 100% {
-      transform: translateX(0);
+  0%,
+  100% {
+    transform: translateX(0);
   }
   15% {
-      transform: translateX(-10px) rotate(-5deg);
+    transform: translateX(-10px) rotate(-5deg);
   }
   30% {
-      transform: translateX(10px) rotate(5deg);
+    transform: translateX(10px) rotate(5deg);
   }
   45% {
-      transform: translateX(-10px) rotate(-5deg);
+    transform: translateX(-10px) rotate(-5deg);
   }
   60% {
-      transform: translateX(10px) rotate(5deg);
+    transform: translateX(10px) rotate(5deg);
   }
   75% {
-      transform: translateX(-5px) rotate(-2.5deg);
+    transform: translateX(-5px) rotate(-2.5deg);
   }
   90% {
-      transform: translateX(5px) rotate(2.5deg);
-  }
-}
-
-@keyframes hoverEffect {
-  0% {
-    transform: translateY(0);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  100% {
-    transform: translateY(-20px) scale(1.1);
-    box-shadow: 0 8px 20px rgba(48, 188, 48, 2);
+    transform: translateX(5px) rotate(2.5deg);
   }
 }
 
@@ -181,10 +165,15 @@ html {
   font-size: 1.2em;
 }
 
-.status {
-  display: flex;
-  align-items: center;
-  margin: 5px 0;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 .status {
@@ -194,15 +183,51 @@ html {
   border-radius: 50%;
   margin-right: 5px;
   vertical-align: middle;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
 }
+
 .status-alive {
   background-color: green;
 }
+
+.status-alive:hover {
+  box-shadow: 0 4px 16px rgba(48, 188, 48, 0.5);
+  transform: scale(1.5);
+}
+
 .status-dead {
   background-color: red;
 }
+
+.status-dead:hover {
+  box-shadow: 0 4px 16px rgba(184, 13, 13, 0.5);
+  transform: scale(1.5);
+}
+
 .status-unknown {
   background-color: gray;
+}
+
+.status-unknown:hover {
+  box-shadow: 0 4px 16px rgba(128, 128, 128, 0.5);
+  transform: scale(1.5);
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+}
+
+.card-hover-alive:hover {
+  box-shadow: 0 4px 16px rgba(48, 188, 48, 5);
+}
+
+.card-hover-dead:hover {
+  box-shadow: 0 4px 16px rgba(184, 13, 13, 5);
+}
+
+.card-hover-unknown:hover {
+  box-shadow: 0 4px 16px rgba(128, 128, 128, 5);
 }
 
 .location-title,
@@ -290,11 +315,12 @@ footer {
 }
 
 @keyframes pulse {
-  0%, 100% {
-      transform: scale(1);
+  0%,
+  100% {
+    transform: scale(1);
   }
   50% {
-      transform: scale(1.2);
+    transform: scale(1.2);
   }
 }
 
@@ -318,7 +344,7 @@ footer {
 
 @media screen and (max-width: 576px) {
   #audio-controls {
-    top: 205px;
+    top: 260px;
     right: 90px;
   }
 
@@ -362,6 +388,12 @@ footer {
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
+  #audio-controls {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+  }
+
   .title {
     font-size: 2.1rem;
   }

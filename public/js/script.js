@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', async function() {
+document.addEventListener('DOMContentLoaded', async function () {
     let currentPage = 1;
     const charactersPerPage = 6;
     let totalPages = 0;
@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', async function() {
     const playBtn = document.getElementById('playBtn');
     const pauseBtn = document.getElementById('pauseBtn');
 
-    playBtn.addEventListener('click', function() {
+    playBtn.addEventListener('click', function () {
         audio.play();
     });
 
-    pauseBtn.addEventListener('click', function() {
+    pauseBtn.addEventListener('click', function () {
         audio.pause();
     });
 
-    audio.play();
+    // audio.play();
 
-    document.getElementById('search-form').addEventListener('submit', function(event) {
+    document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
         currentQuery = document.getElementById('query').value;
         currentPage = 1;
@@ -35,18 +35,8 @@ document.addEventListener('DOMContentLoaded', async function() {
 
         for (let i = 0; i < characters.length; i++) {
             const character = characters[i];
-            let statusClass = '';
-            switch (character.status.toLowerCase()) {
-                case 'alive':
-                    statusClass = 'status-alive';
-                    break;
-                case 'dead':
-                    statusClass = 'status-dead';
-                    break;
-                default:
-                    statusClass = 'status-unknown';
-                    break;
-            }
+            const statusClass = applyStatusClass(character.status.toLowerCase());
+            const hoverClass = applyHoverClass(character.status.toLowerCase());
 
             const firstEpisodeUrl = character.episode[0];
             const episodeName = await getEpisodeName(firstEpisodeUrl);
@@ -54,7 +44,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             const card = `
                 <div class="col-12 col-sm-4">
                     <div class="image-container">
-                        <div class="card">
+                        <div class="card ${hoverClass}">
                             <img src="${character.image}" class="card-img-top" alt="${character.name}">
                             <div class="card-body">
                                 <h5 class="card-title">${character.name}</h5>
@@ -66,6 +56,10 @@ document.addEventListener('DOMContentLoaded', async function() {
                                 <p class="card-text">${character.location.name}</p>
                                 <p class="location-title seen-title">Visto pela última vez em</p>
                                 <p class="location seen">${episodeName}</p>
+                                    <button type="button" class="btn btn-success btn-sm pt-2">
+                                        <a href="./detalhes.html" class="text-decoration-none text-white">Mais detalhes</a>
+                                    </button>
+
                             </div>
                         </div>
                     </div>
@@ -74,6 +68,28 @@ document.addEventListener('DOMContentLoaded', async function() {
             container.insertAdjacentHTML('beforeend', card);
         }
         updatePaginationControls(query);
+    }
+
+    function applyStatusClass(status) {
+        switch (status) {
+            case 'alive':
+                return 'status-alive';
+            case 'dead':
+                return 'status-dead';
+            default:
+                return 'status-unknown';
+        }
+    }
+
+    function applyHoverClass(status) {
+        switch (status) {
+            case 'alive':
+                return 'card-hover-alive';
+            case 'dead':
+                return 'card-hover-dead';
+            default:
+                return 'card-hover-unknown';
+        }
     }
 
     function updatePaginationControls(query = '') {
@@ -114,7 +130,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     updateFooter();
 });
 
-window.onscroll = function() { scrollFunction(); };
+window.onscroll = function () { scrollFunction(); };
 
 function scrollFunction() {
     const topBtn = document.getElementById("topBtn");
