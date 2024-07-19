@@ -9,11 +9,18 @@
     <!-- CSS Ícones -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Meu CSS -->
+
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style2.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="./images/rickMorty.ico" type="image/x-icon">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/style2.css">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="../images/rickMorty.ico" type="image/x-icon">
+
     <title>API de Rick and Morty</title>
 </head>
 
@@ -21,7 +28,10 @@
     <header class="container-fluid bg-white d-flex flex-column align-items-center justify-content-center pb-4">
         <section class="row d-flex flex-column align-self-start">
             <div class="col-12">
+
+                <img src="./images/RICK_MORTY_ICON.png" alt="Ícone Rick and Morty" class="rickmorty mt-3">
                 <img src="../images/RICK_MORTY_ICON.png" alt="Ícone Rick and Morty" class="rickmorty mt-3">
+
             </div>
         </section>
         <section class="row w-100 d-flex mt-1 justify-content-center">
@@ -80,22 +90,31 @@
         </div>
     </footer>
 
-
     <div id="audio-controls">
         <button id="playBtn" class="btn btn-success">Play</button>
         <button id="pauseBtn" class="btn btn-danger">Pause</button>
     </div>
 
+
+    <audio id="background-audio" src="./audio/Rick and Morty Theme Song [HD].mp3" loop></audio>
+
     <audio id="background-audio" src="../audio/Rick and Morty Theme Song [HD].mp3" loop></audio>
+
 
     <!-- JS Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JS Axios -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- Meu script -->
+
+    <script src="./js/api.js"></script>
+    <script src="./js/detalhes.js"></script>
+    <script src="./js/script.js"></script>
+
     <script src="../js/api.js"></script>
     <script src="../js/detalhes.js"></script>
     <script src="../js/script.js"></script>
+
 </body>
 
 </html>
