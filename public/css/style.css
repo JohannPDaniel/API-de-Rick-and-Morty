@@ -342,14 +342,14 @@ footer {
   }
 }
 
-@media screen and (min-width:320px) and (max-width: 375px){
+@media screen and (min-width:320px) and (max-width: 375px) {
   .title {
     font-size: 1.6rem;
   }
-
+  
   #audio-controls {
-    top: 205px;
-    right: 85px;
+    top: 200px;
+    right: 80px;
   }
 
   .card {
@@ -395,10 +395,10 @@ footer {
   .title {
     font-size: 1.6rem;
   }
-
+  
   #audio-controls {
-    top: 175px;
-    right: 115px;
+    top: 180px;
+    right: 105px;
   }
 
   .card {
@@ -440,14 +440,13 @@ footer {
   }
 }
 
-
 @media screen and (min-width:425px) and (max-width: 576px) {
   .title {
     font-size: 1.9rem;
   }
-
+  
   #audio-controls {
-    top: 175px;
+    top: 180px;
     right: 135px;
   }
 
