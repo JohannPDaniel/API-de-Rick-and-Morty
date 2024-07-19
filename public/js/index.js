@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         audio.pause();
     });
 
-    audio.play();
+    audio.play()
 
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
