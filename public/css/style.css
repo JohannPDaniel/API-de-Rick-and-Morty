@@ -344,7 +344,7 @@ footer {
 
 @media screen and (max-width: 576px) {
   #audio-controls {
-    top: 260px;
+    top: 210px;
     right: 90px;
   }
 
@@ -390,7 +390,7 @@ footer {
 @media screen and (min-width: 768px) and (max-width: 992px) {
   #audio-controls {
     position: fixed;
-    top: 80px;
+    top: 20px;
     right: 20px;
   }
 
