@@ -16,12 +16,13 @@ document.addEventListener('DOMContentLoaded', async function () {
         audio.pause();
     });
 
-    audio.play()
+    audio.play();
 
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
         currentQuery = document.getElementById('query').value;
         currentPage = 1;
+        console.log("Form submitted. Query:", currentQuery);
         loadCharacters(currentPage, currentQuery);
     });
 
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         nextPageButton.onclick = () => {
             if (currentPage < totalPages) {
                 currentPage++;
+                console.log("Next page button clicked. Current page:", currentPage);
                 loadCharacters(currentPage, query);
                 topFunction();
             }
