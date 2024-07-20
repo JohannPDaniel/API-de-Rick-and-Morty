@@ -4,19 +4,27 @@ document.addEventListener('DOMContentLoaded', async function () {
     let totalPages = 0;
     let currentQuery = '';
 
+    const toggleBtn = document.getElementById('toggleBtn');
+    const volumeIcon = document.getElementById('volumeIcon');
     const audio = document.getElementById('background-audio');
-    const playBtn = document.getElementById('playBtn');
-    const pauseBtn = document.getElementById('pauseBtn');
+    let isPlaying = false;
 
-    playBtn.addEventListener('click', function () {
-        audio.play();
+    toggleBtn.addEventListener('click', function () {
+        if (isPlaying) {
+            audio.pause();
+            toggleBtn.classList.remove('btn-success');
+            toggleBtn.classList.add('btn-danger');
+            volumeIcon.src = './images/sem-som.png';
+            volumeIcon.alt = 'sem som';
+        } else {
+            audio.play();
+            toggleBtn.classList.remove('btn-danger');
+            toggleBtn.classList.add('btn-success');
+            volumeIcon.src = './images/volume-alto.png';
+            volumeIcon.alt = 'com volume';
+        }
+        isPlaying = !isPlaying;
     });
-
-    pauseBtn.addEventListener('click', function () {
-        audio.pause();
-    });
-
-    audio.play();
 
     document.getElementById('search-form').addEventListener('submit', function (event) {
         event.preventDefault();
