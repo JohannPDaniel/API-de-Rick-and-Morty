@@ -33,16 +33,32 @@
   object-fit: contain;
 }
 
-#audio-controls {
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#toggleBtn {
   position: fixed;
   top: 20px;
   right: 20px;
-  z-index: 100;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
-  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.volume {
+  width: 23px;
+  height: auto;
 }
 
 .status-alive {
